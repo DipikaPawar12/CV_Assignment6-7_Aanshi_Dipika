@@ -110,7 +110,7 @@ The aim of developing the neural style transfer method is that in order to combi
     - If the style image has dark texture, then even if the content image is lighter in shade then also the output image contains darker texture retaining the same content.<br/>
     - If the texture of the style image is completely different from the content image, then the output image will contain the different texture.<br/>
   
- - Different resolution content images
+ - Different resolution content images<br/>
  Comparison between output images for different size(128X128, 256X256, 512X512, 1024X1024) of same content image provides the following results:
  <table>
   <tr>
@@ -119,7 +119,7 @@ The aim of developing the neural style transfer method is that in order to combi
   </tr>
   <tr>
     <td><img src="https://github.com/DipikaPawar12/CV_Assignment6-7_Aanshi_Dipika/blob/main/images/VGG16_512X512.png" width=200 height=200></td>
-    <td><img src="https://github.com/DipikaPawar12/CV_Assignment6-7_Aanshi_Dipika/blob/main/images/VGG16_1024X1024.png" width=200 height=200></td>
+    <td><img src="https://github.com/DipikaPawar12/CV_Assignment6-7_Aanshi_Dipika/blob/main/images/VGG_1024X1024.png" width=200 height=200></td>
   </tr>
  </table>
     - As the content image size increases, the features related to the content are extracted from the image with increase in time complexity.
@@ -127,20 +127,49 @@ The aim of developing the neural style transfer method is that in order to combi
     - The boundary detection of the images is least for low resolution and most for high resolution.
     - More style features are visible in high resolution image as compared to low resolution image.
    
- - Different algorithms
+ - Different algorithms<br/>
  The comparison on applying different types of architecture models on same content and style image are:
  <table>
   <tr>
-    <td><img src="https://github.com/DipikaPawar12/CV_Assignment6-7_Aanshi_Dipika/blob/main/images/VGG16_128X128.png" width=200 height=200></td>
-     <td><img src="https://github.com/DipikaPawar12/CV_Assignment6-7_Aanshi_Dipika/blob/main/images/VGG16_256X256.png" width=200 height=200></td>
+   <td>VGG-16<td/>
+      <td>VGG-19<td/>
+      <td>Resnet-50<td/>
   </tr>
   <tr>
-    <td><img src="https://github.com/DipikaPawar12/CV_Assignment6-7_Aanshi_Dipika/blob/main/images/VGG16_512X512.png" width=200 height=200></td>
-    <td><img src="https://github.com/DipikaPawar12/CV_Assignment6-7_Aanshi_Dipika/blob/main/images/VGG16_1024X1024.png" width=200 height=200></td>
+    <td><img src="https://github.com/DipikaPawar12/CV_Assignment6-7_Aanshi_Dipika/blob/main/images/VGG16_style1_output.png" width=200 height=200></td>
+      <td><img src="https://github.com/DipikaPawar12/CV_Assignment6-7_Aanshi_Dipika/blob/main/images/VGG19_output.png" width=200 height=200></td>
+    <td><img src="https://github.com/DipikaPawar12/CV_Assignment6-7_Aanshi_Dipika/blob/main/images/Resnet50_output.png" width=200 height=200></td>
   </tr>
  </table>
  The difference between the architecture complexities is as follows:
-
+<table>
+  <tr>
+      <td>Comparison</td>  
+      <td>VGG-16<td/>
+      <td>VGG-19<td/>
+      <td>Resnet-50<td/>
+  </tr>
+  <tr>
+      <td>Time Complexity </td>  
+      <td>0.0604s<td/>
+      <td>0.0679s<td/>
+      <td>0.0974s<td/>
+  </tr>
+  <tr>
+      <td>Space Complexity </td>  
+      <td>Low<td/>
+      <td>Low<td/>
+      <td>High<td/>
+  </tr>
+  <tr>
+      <td>Steps Required</td>  
+      <td>Less<td/>
+      <td>Less<td/>
+      <td>More<td/>
+  </tr>
+ </table>
+    - As there are more layers in VGG19, so more robust output image is obtained compared to VGG16, while ResNet50 cannot be preferred as it is not able to extract the style features. 
+ 
 ## Platform
 ---
 - Google Colab
@@ -167,13 +196,13 @@ drive.mount('/content/drive')
 
 ## References
 ---
-<a id="1">[1]</a> []()<br/>
-<a id="2">[2]</a> [M. B. L. Gatys, A. Ecker,<br/> A neural algorithm of artistic style.]()<br/>
-<a id="3">[3]</a> [Z. F. J. Y. Y. Y. Yongcheng Jing, Yezhou Yang and M. Song,<br/>Neural
-Style Transfer: A review.]()<br/>
-<a id="4">[4]</a> [J. L. Y. Li, N. Wang and X. Hou,<br/>Demystifying neural style transfer.]()<br/>
-<a id="5">[5]</a> [J. Y. Z. W. X. L. Yijun Li, Chen Fang and M.-H. Yang,<br/>Universal style
-transfer via feature transforms.]()
+<a id="1">[1]</a> [Neural Style Transfer: Creating Art with Deep Learning using tf.keras and eager execution](https://medium.com/tensorflow/neural-style-transfer-creating-art-with-deep-learning-using-tf-keras-and-eager-execution-7d541ac31398)<br/>
+<a id="2">[2]</a> [M. B. L. Gatys, A. Ecker, A Neural Algorithm Of Artistic Style.](https://arxiv.org/abs/1508.06576)<br/>
+<a id="3">[3]</a> [Z. F. J. Y. Y. Y. Yongcheng Jing, Yezhou Yang and M. Song, Neural
+Style Transfer: A Review.](https://ieeexplore.ieee.org/document/8732370)<br/>
+<a id="4">[4]</a> [J. L. Y. Li, N. Wang and X. Hou, Demystifying Neural Style Transfer.](https://arxiv.org/abs/1701.01036)<br/>
+<a id="5">[5]</a> [J. Y. Z. W. X. L. Yijun Li, Chen Fang and M.-H. Yang, Universal Style
+Transfer Via Feature Transforms.](https://arxiv.org/abs/1705.08086)
 
 ## Contributors
 ---
