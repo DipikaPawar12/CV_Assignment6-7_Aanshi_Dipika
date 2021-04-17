@@ -40,19 +40,27 @@ For extracting the feature maps for extracting style and content representation 
 - Loss function and optimisation
     - Content Loss Function
 In order to make sure that the difference between the content of the generated output image and the content image is minimised, the content loss function is defined using the Minimum Square Error(MSE) loss.
-//IMAGE
+<p align="center">
+<img src="https://github.com/DipikaPawar12/CV_Assignment6-7_Aanshi_Dipika/blob/main/images/content_loss_function.JPG" width="100%" height="300" style="vertical-align:middle;margin:50px 50px">
+ </p>
 
     - Style Loss Function
 In order to make sure that the difference between the texture of the generated output image and the style image is minimised, the style loss function is defined using gram matrices concept.<br/>
 Gram matrix is a matrix which is used in the calculation of the correlation between the channels of the same convolutional layer used for style features extraction. The output suggests how much degree of correlation is there within the channels with respect to each other.<br/>
 The gram matrices of style image and generated output image of same layers are compared using square difference function to minimise the loss function. Defining the gram matrices loss:<br/>
-//IMAGE
+<p align="center">
+<img src="https://github.com/DipikaPawar12/CV_Assignment6-7_Aanshi_Dipika/blob/main/images/style_loss_function.JPG" width="100%" height="300" style="vertical-align:middle;margin:50px 50px">
+ </p>
 As there are multiple layers involved in extracting the style and in the loss function, weights are assigned to loss function of every layer which finally gives the style loss function.
-//IMAGE
+<p align="center">
+<img src="https://github.com/DipikaPawar12/CV_Assignment6-7_Aanshi_Dipika/blob/main/images/style_loss_final_function.JPG" width="100%" height="300" style="vertical-align:middle;margin:50px 50px">
+ </p>
 
     - Complete Loss Function
 In order to make sure that the generated output image is similar to the content image in terms of their content and to style image in terms of their style and not the complete style image, loss function is introduced in the implementation with two separate parts content loss and style loss for calculating loss. With every iteration, the goal is to minimise the overall loss function so the we get the desired output image. 
-//IMAGE
+<p align="center">
+<img src="https://github.com/DipikaPawar12/CV_Assignment6-7_Aanshi_Dipika/blob/main/images/total_loss_function.JPG" width="100%" height="300" style="vertical-align:middle;margin:50px 50px">
+ </p>
 The parameters alpha and beta act as weights for controlling the amount of content and style features to be added into the generated output image.
 
     - Gradient Descent for optimisation
@@ -73,7 +81,9 @@ The aim of developing the neural style transfer method is that in order to combi
   </tr>
  </table>
  
- - 
+ - Different style images
+ - Different resolution content images
+ - Different algorithms
 
 ## Platform
 ---
