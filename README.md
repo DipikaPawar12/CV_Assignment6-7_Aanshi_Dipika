@@ -41,23 +41,23 @@ For extracting the feature maps for extracting style and content representation 
     - Content Loss Function
 In order to make sure that the difference between the content of the generated output image and the content image is minimised, the content loss function is defined using the Minimum Square Error(MSE) loss.
 <p align="center">
-<img src="https://github.com/DipikaPawar12/CV_Assignment6-7_Aanshi_Dipika/blob/main/images/content_loss_function.JPG" width="100%" height="100" style="vertical-align:middle;margin:50px 50px">
+<img src="https://github.com/DipikaPawar12/CV_Assignment6-7_Aanshi_Dipika/blob/main/images/content_loss_function.JPG" style="vertical-align:middle;margin:50px 50px">
  </p>
     - Style Loss Function
 In order to make sure that the difference between the texture of the generated output image and the style image is minimised, the style loss function is defined using gram matrices concept.<br/>
 Gram matrix is a matrix which is used in the calculation of the correlation between the channels of the same convolutional layer used for style features extraction. The output suggests how much degree of correlation is there within the channels with respect to each other.<br/>
 The gram matrices of style image and generated output image of same layers are compared using square difference function to minimise the loss function. Defining the gram matrices loss:<br/>
 <p align="center">
-<img src="https://github.com/DipikaPawar12/CV_Assignment6-7_Aanshi_Dipika/blob/main/images/style_loss_function.JPG" width="100%" height="100" style="vertical-align:middle;margin:50px 50px">
+<img src="https://github.com/DipikaPawar12/CV_Assignment6-7_Aanshi_Dipika/blob/main/images/style_loss_function.JPG" style="vertical-align:middle;margin:50px 50px">
  </p>
 As there are multiple layers involved in extracting the style and in the loss function, weights are assigned to loss function of every layer which finally gives the style loss function.
 <p align="center">
-<img src="https://github.com/DipikaPawar12/CV_Assignment6-7_Aanshi_Dipika/blob/main/images/style_loss_final_function.JPG" width="100%" height="100" style="vertical-align:middle;margin:50px 50px">
+<img src="https://github.com/DipikaPawar12/CV_Assignment6-7_Aanshi_Dipika/blob/main/images/style_loss_final_function.JPG" style="vertical-align:middle;margin:50px 50px">
  </p>
     - Complete Loss Function
 In order to make sure that the generated output image is similar to the content image in terms of their content and to style image in terms of their style and not the complete style image, loss function is introduced in the implementation with two separate parts content loss and style loss for calculating loss. With every iteration, the goal is to minimise the overall loss function so the we get the desired output image. 
 <p align="center">
-<img src="https://github.com/DipikaPawar12/CV_Assignment6-7_Aanshi_Dipika/blob/main/images/total_loss_function.JPG" width="100%" height="100" style="vertical-align:middle;margin:50px 50px">
+<img src="https://github.com/DipikaPawar12/CV_Assignment6-7_Aanshi_Dipika/blob/main/images/total_loss_function.JPG" style="vertical-align:middle;margin:50px 50px">
  </p>
 The parameters alpha and beta act as weights for controlling the amount of content and style features to be added into the generated output image.
     - Gradient Descent for optimisation
@@ -73,8 +73,8 @@ The aim of developing the neural style transfer method is that in order to combi
      <td>Simple Addition of Images</td>
   </tr>
   <tr>
-    <td><img src="https://github.com/DipikaPawar12/CV_Assignment6-7_Aanshi_Dipika/blob/main/images/NST_by_addition_of_images.png" width=300 height=300></td>
-    <td><img src="https://github.com/DipikaPawar12/CV_Assignment6-7_Aanshi_Dipika/blob/main/images/VGG16_style1_output.png" width=300 height=300></td>
+    <td><img src="https://github.com/DipikaPawar12/CV_Assignment6-7_Aanshi_Dipika/blob/main/images/NST_by_addition_of_images.png" width=200 height=200></td>
+    <td><img src="https://github.com/DipikaPawar12/CV_Assignment6-7_Aanshi_Dipika/blob/main/images/VGG16_style1_output.png" width=200 height=200></td>
   </tr>
  </table>
  
@@ -92,17 +92,17 @@ The aim of developing the neural style transfer method is that in order to combi
   </tr>
   <tr>
     <td><img src="https://github.com/DipikaPawar12/CV_Assignment6-7_Aanshi_Dipika/blob/main/images/content_image.jpg" width=200 height=200></td>
-    <td><img src="https://github.com/DipikaPawar12/CV_Assignment6-7_Aanshi_Dipika/blob/main/images/style_image_2.jpeg" width=200 height=200></td>
+    <td><img src="https://github.com/DipikaPawar12/CV_Assignment6-7_Aanshi_Dipika/blob/main/images/style_image_2.png" width=200 height=200></td>
     <td><img src="https://github.com/DipikaPawar12/CV_Assignment6-7_Aanshi_Dipika/blob/main/images/VGG16_style2_output.png" width=200 height=200></td>  
   </tr>
   <tr>
     <td><img src="https://github.com/DipikaPawar12/CV_Assignment6-7_Aanshi_Dipika/blob/main/images/content_image.jpg" width=200 height=200></td>
-    <td><img src="https://github.com/DipikaPawar12/CV_Assignment6-7_Aanshi_Dipika/blob/main/images/style_image_3.jpeg" width=200 height=200></td>
+    <td><img src="https://github.com/DipikaPawar12/CV_Assignment6-7_Aanshi_Dipika/blob/main/images/style_image_3.jpg" width=200 height=200></td>
     <td><img src="https://github.com/DipikaPawar12/CV_Assignment6-7_Aanshi_Dipika/blob/main/images/VGG16_style3_output.png" width=200 height=200></td>  
   </tr>
   <tr>
     <td><img src="https://github.com/DipikaPawar12/CV_Assignment6-7_Aanshi_Dipika/blob/main/images/content_image.jpg" width=200 height=200></td>
-    <td><img src="https://github.com/DipikaPawar12/CV_Assignment6-7_Aanshi_Dipika/blob/main/images/style_image_4.jpeg" width=200 height=200></td>
+    <td><img src="https://github.com/DipikaPawar12/CV_Assignment6-7_Aanshi_Dipika/blob/main/images/style_image_4.jpg" width=200 height=200></td>
     <td><img src="https://github.com/DipikaPawar12/CV_Assignment6-7_Aanshi_Dipika/blob/main/images/VGG16_style4_output.png" width=200 height=200></td>  
   </tr>
  </table>
@@ -111,8 +111,35 @@ The aim of developing the neural style transfer method is that in order to combi
     - If the texture of the style image is completely different from the content image, then the output image will contain the different texture.<br/>
   
  - Different resolution content images
- 
+ Comparison between output images for different size(128X128, 256X256, 512X512, 1024X1024) of same content image provides the following results:
+ <table>
+  <tr>
+    <td><img src="https://github.com/DipikaPawar12/CV_Assignment6-7_Aanshi_Dipika/blob/main/images/VGG16_128X128.png" width=200 height=200></td>
+     <td><img src="https://github.com/DipikaPawar12/CV_Assignment6-7_Aanshi_Dipika/blob/main/images/VGG16_256X256.png" width=200 height=200></td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/DipikaPawar12/CV_Assignment6-7_Aanshi_Dipika/blob/main/images/VGG16_512X512.png" width=200 height=200></td>
+    <td><img src="https://github.com/DipikaPawar12/CV_Assignment6-7_Aanshi_Dipika/blob/main/images/VGG16_1024X1024.png" width=200 height=200></td>
+  </tr>
+ </table>
+    - As the content image size increases, the features related to the content are extracted from the image with increase in time complexity.
+    - The output image contains more information of the features as the size increases.(more blur to less blur)
+    - The boundary detection of the images is least for low resolution and most for high resolution.
+    - More style features are visible in high resolution image as compared to low resolution image.
+   
  - Different algorithms
+ The comparison on applying different types of architecture models on same content and style image are:
+ <table>
+  <tr>
+    <td><img src="https://github.com/DipikaPawar12/CV_Assignment6-7_Aanshi_Dipika/blob/main/images/VGG16_128X128.png" width=200 height=200></td>
+     <td><img src="https://github.com/DipikaPawar12/CV_Assignment6-7_Aanshi_Dipika/blob/main/images/VGG16_256X256.png" width=200 height=200></td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/DipikaPawar12/CV_Assignment6-7_Aanshi_Dipika/blob/main/images/VGG16_512X512.png" width=200 height=200></td>
+    <td><img src="https://github.com/DipikaPawar12/CV_Assignment6-7_Aanshi_Dipika/blob/main/images/VGG16_1024X1024.png" width=200 height=200></td>
+  </tr>
+ </table>
+ The difference between the architecture complexities is as follows:
 
 ## Platform
 ---
