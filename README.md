@@ -136,7 +136,7 @@ The aim of developing the neural style transfer method is that in order to combi
    <td>Resnet-50<td/>
   </tr>
   <tr>
-    <td><img src="https://github.com/DipikaPawar12/CV_Assignment6-7_Aanshi_Dipika/blob/main/images/VGG16_style1_output.png" width=200 height=200></td>
+    <td><img src="https://github.com/DipikaPawar12/CV_Assignment6-7_Aanshi_Dipika/blob/main/images/VGG16_style3_output.png" width=200 height=200></td>
       <td></td>  
     <td><img src="https://github.com/DipikaPawar12/CV_Assignment6-7_Aanshi_Dipika/blob/main/images/VGG19_output.png" width=200 height=200></td>
        <td></td> 
