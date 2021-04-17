@@ -43,6 +43,7 @@ In order to make sure that the difference between the content of the generated o
 <p align="center">
 <img src="https://github.com/DipikaPawar12/CV_Assignment6-7_Aanshi_Dipika/blob/main/images/content_loss_function.JPG" style="vertical-align:middle;margin:50px 50px">
  </p>
+ 
     - Style Loss Function<br/>
 In order to make sure that the difference between the texture of the generated output image and the style image is minimised, the style loss function is defined using gram matrices concept.<br/>
 Gram matrix is a matrix which is used in the calculation of the correlation between the channels of the same convolutional layer used for style features extraction. The output suggests how much degree of correlation is there within the channels with respect to each other.<br/>
@@ -50,12 +51,13 @@ The gram matrices of style image and generated output image of same layers are c
 <p align="center">
 <img src="https://github.com/DipikaPawar12/CV_Assignment6-7_Aanshi_Dipika/blob/main/images/style_loss_function.JPG" style="vertical-align:middle;margin:50px 50px">
  </p>
-As there are multiple layers involved in extracting the style and in the loss function, weights are assigned to loss function of every layer which finally gives the style loss function.
+As there are multiple layers involved in extracting the style and in the loss function, weights are assigned to loss function of every layer which finally gives the style loss function.<br/>
 <p align="center">
 <img src="https://github.com/DipikaPawar12/CV_Assignment6-7_Aanshi_Dipika/blob/main/images/style_loss_final_function.JPG" style="vertical-align:middle;margin:50px 50px">
  </p>
+ 
     - Complete Loss Function<br/>
-In order to make sure that the generated output image is similar to the content image in terms of their content and to style image in terms of their style and not the complete style image, loss function is introduced in the implementation with two separate parts content loss and style loss for calculating loss. With every iteration, the goal is to minimise the overall loss function so the we get the desired output image. 
+In order to make sure that the generated output image is similar to the content image in terms of their content and to style image in terms of their style and not the complete style image, loss function is introduced in the implementation with two separate parts content loss and style loss for calculating loss. With every iteration, the goal is to minimise the overall loss function so the we get the desired output image.<br/> 
 <p align="center">
 <img src="https://github.com/DipikaPawar12/CV_Assignment6-7_Aanshi_Dipika/blob/main/images/total_loss_function.JPG" style="vertical-align:middle;margin:50px 50px">
  </p>
