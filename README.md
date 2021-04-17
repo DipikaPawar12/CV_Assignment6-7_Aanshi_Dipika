@@ -22,47 +22,44 @@ In the past, for creating an image in a particular style and form, people used t
 ## Approach
 ---
 For fast and easy execution of the models' operations; eager execution command has been executed to save the time in running the models. This also helps in debugging the code faster. 
-- Layers used and details about layers
+- Layers used and details about layers<br/>
 For fetching the content and the style features from the input images, the results of the intermediate layers are used. The feature maps become complex as we move from lower to higher order layers in the network.
 
-- Content Feature Extraction
+- Content Feature Extraction<br/>
 As we move deeper into the network, the features extracted from the images contain more information about the content within the image as compared to the details in the pixel values. So, mainly the features extracted from the higher layers are used as a content representation required for the formation of the output image. Usually higher layer from the last set of convolutional layers is used as a content extraction.
 
-- Style Feature Extraction
+- Style Feature Extraction<br/>
 For style representation used in the formation of the output image, the correlation among the different feature maps from the kernel results from the convolutional layers is done which can take out the texture information(local details) without taking out the global details. These correlations are known as gram matrices. Usually the first layer in every set of convolutional layers are used for correlation with varying weight for each layer. This can help in varying the style levels. 
 
-- Architectures implemented
+- Architectures implemented<br/>
 For extracting the feature maps for extracting style and content representation use of the pre-trained model is done. The output of the model is used in for fetching the layers for content and style extraction. Here, we have tried implementing the following architectures:-
-    - VGG-16 architecture
-    - VGG-19 architecture
-    - ResNet50 architecture
+    - VGG-16 architecture<br/>
+    - VGG-19 architecture<br/>
+    - ResNet50 architecture<br/>
 
 - Loss function and optimisation
     - Content Loss Function
 In order to make sure that the difference between the content of the generated output image and the content image is minimised, the content loss function is defined using the Minimum Square Error(MSE) loss.
 <p align="center">
-<img src="https://github.com/DipikaPawar12/CV_Assignment6-7_Aanshi_Dipika/blob/main/images/content_loss_function.JPG" width="100%" height="300" style="vertical-align:middle;margin:50px 50px">
+<img src="https://github.com/DipikaPawar12/CV_Assignment6-7_Aanshi_Dipika/blob/main/images/content_loss_function.JPG" width="100%" height="100" style="vertical-align:middle;margin:50px 50px">
  </p>
-
     - Style Loss Function
 In order to make sure that the difference between the texture of the generated output image and the style image is minimised, the style loss function is defined using gram matrices concept.<br/>
 Gram matrix is a matrix which is used in the calculation of the correlation between the channels of the same convolutional layer used for style features extraction. The output suggests how much degree of correlation is there within the channels with respect to each other.<br/>
 The gram matrices of style image and generated output image of same layers are compared using square difference function to minimise the loss function. Defining the gram matrices loss:<br/>
 <p align="center">
-<img src="https://github.com/DipikaPawar12/CV_Assignment6-7_Aanshi_Dipika/blob/main/images/style_loss_function.JPG" width="100%" height="300" style="vertical-align:middle;margin:50px 50px">
+<img src="https://github.com/DipikaPawar12/CV_Assignment6-7_Aanshi_Dipika/blob/main/images/style_loss_function.JPG" width="100%" height="100" style="vertical-align:middle;margin:50px 50px">
  </p>
 As there are multiple layers involved in extracting the style and in the loss function, weights are assigned to loss function of every layer which finally gives the style loss function.
 <p align="center">
-<img src="https://github.com/DipikaPawar12/CV_Assignment6-7_Aanshi_Dipika/blob/main/images/style_loss_final_function.JPG" width="100%" height="300" style="vertical-align:middle;margin:50px 50px">
+<img src="https://github.com/DipikaPawar12/CV_Assignment6-7_Aanshi_Dipika/blob/main/images/style_loss_final_function.JPG" width="100%" height="100" style="vertical-align:middle;margin:50px 50px">
  </p>
-
     - Complete Loss Function
 In order to make sure that the generated output image is similar to the content image in terms of their content and to style image in terms of their style and not the complete style image, loss function is introduced in the implementation with two separate parts content loss and style loss for calculating loss. With every iteration, the goal is to minimise the overall loss function so the we get the desired output image. 
 <p align="center">
-<img src="https://github.com/DipikaPawar12/CV_Assignment6-7_Aanshi_Dipika/blob/main/images/total_loss_function.JPG" width="100%" height="300" style="vertical-align:middle;margin:50px 50px">
+<img src="https://github.com/DipikaPawar12/CV_Assignment6-7_Aanshi_Dipika/blob/main/images/total_loss_function.JPG" width="100%" height="100" style="vertical-align:middle;margin:50px 50px">
  </p>
 The parameters alpha and beta act as weights for controlling the amount of content and style features to be added into the generated output image.
-
     - Gradient Descent for optimisation
 Using gradient descent approach for minimising the loss is generally done which can help in generating more informative output image. Here, we have implemented the Adam optimiser which can be used for backpropagation which update the hyperparameters after every iteration and optimises the loss function.
 
@@ -82,7 +79,39 @@ The aim of developing the neural style transfer method is that in order to combi
  </table>
  
  - Different style images
+ <table>
+  <tr>
+    <td>Content Image</td>
+     <td>Style Image</td>
+      <td>Output Image</td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/DipikaPawar12/CV_Assignment6-7_Aanshi_Dipika/blob/main/images/content_image.jpg" width=200 height=200></td>
+    <td><img src="https://github.com/DipikaPawar12/CV_Assignment6-7_Aanshi_Dipika/blob/main/images/style_image_1.jpeg" width=200 height=200></td>
+    <td><img src="https://github.com/DipikaPawar12/CV_Assignment6-7_Aanshi_Dipika/blob/main/images/VGG16_style1_output.png" width=200 height=200></td>  
+  </tr>
+  <tr>
+    <td><img src="https://github.com/DipikaPawar12/CV_Assignment6-7_Aanshi_Dipika/blob/main/images/content_image.jpg" width=200 height=200></td>
+    <td><img src="https://github.com/DipikaPawar12/CV_Assignment6-7_Aanshi_Dipika/blob/main/images/style_image_2.jpeg" width=200 height=200></td>
+    <td><img src="https://github.com/DipikaPawar12/CV_Assignment6-7_Aanshi_Dipika/blob/main/images/VGG16_style2_output.png" width=200 height=200></td>  
+  </tr>
+  <tr>
+    <td><img src="https://github.com/DipikaPawar12/CV_Assignment6-7_Aanshi_Dipika/blob/main/images/content_image.jpg" width=200 height=200></td>
+    <td><img src="https://github.com/DipikaPawar12/CV_Assignment6-7_Aanshi_Dipika/blob/main/images/style_image_3.jpeg" width=200 height=200></td>
+    <td><img src="https://github.com/DipikaPawar12/CV_Assignment6-7_Aanshi_Dipika/blob/main/images/VGG16_style3_output.png" width=200 height=200></td>  
+  </tr>
+  <tr>
+    <td><img src="https://github.com/DipikaPawar12/CV_Assignment6-7_Aanshi_Dipika/blob/main/images/content_image.jpg" width=200 height=200></td>
+    <td><img src="https://github.com/DipikaPawar12/CV_Assignment6-7_Aanshi_Dipika/blob/main/images/style_image_4.jpeg" width=200 height=200></td>
+    <td><img src="https://github.com/DipikaPawar12/CV_Assignment6-7_Aanshi_Dipika/blob/main/images/VGG16_style4_output.png" width=200 height=200></td>  
+  </tr>
+ </table>
+    - For different style image, different texture is applied to the output image.<br/>
+    - If the style image has dark texture, then even if the content image is lighter in shade then also the output image contains darker texture retaining the same content.<br/>
+    - If the texture of the style image is completely different from the content image, then the output image will contain the different texture.<br/>
+  
  - Different resolution content images
+ 
  - Different algorithms
 
 ## Platform
@@ -111,12 +140,12 @@ drive.mount('/content/drive')
 
 ## References
 ---
-<a id="1">[1]</a> []()
-<a id="2">[1]</a> [M. B. L. Gatys, A. Ecker,<br/> A neural algorithm of artistic style.]()
-<a id="3">[1]</a> [Z. F. J. Y. Y. Y. Yongcheng Jing, Yezhou Yang and M. Song,<br/>Neural
-Style Transfer: A review.]()
-<a id="4">[1]</a> [J. L. Y. Li, N. Wang and X. Hou,<br/>Demystifying neural style transfer.]()
-<a id="5">[1]</a> [J. Y. Z. W. X. L. Yijun Li, Chen Fang and M.-H. Yang,<br/>Universal style
+<a id="1">[1]</a> []()<br/>
+<a id="2">[2]</a> [M. B. L. Gatys, A. Ecker,<br/> A neural algorithm of artistic style.]()<br/>
+<a id="3">[3]</a> [Z. F. J. Y. Y. Y. Yongcheng Jing, Yezhou Yang and M. Song,<br/>Neural
+Style Transfer: A review.]()<br/>
+<a id="4">[4]</a> [J. L. Y. Li, N. Wang and X. Hou,<br/>Demystifying neural style transfer.]()<br/>
+<a id="5">[5]</a> [J. Y. Z. W. X. L. Yijun Li, Chen Fang and M.-H. Yang,<br/>Universal style
 transfer via feature transforms.]()
 
 ## Contributors
